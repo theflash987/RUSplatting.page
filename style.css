@@ -17,7 +17,7 @@ header {
 }
 
 body {
-  max-width: 720px;
+  max-width: 850px;
   margin: 0px auto;
 }
 
@@ -36,7 +36,7 @@ h1 .title-main  {
   display: flex;
   justify-content: center;
   gap: 0.3em;
-  margin-bottom: 0.2em;
+  /*margin-bottom: 0.2em;*/
 }
 
 h1 .title-main > img {
@@ -49,10 +49,18 @@ h1 .title-main > span {
 }
 
 h1 .title-small  {
+  font-size: 0.8em;
   display: block;
   text-align: center;
   font-weight: 500;
-  font-size: 0.75em;
+}
+
+header .conference {
+  text-align: center;
+  font-size: 1.4em;
+  margin: -0.8em auto 1.5em auto;
+  font-style: italic;
+  color: #666;
 }
 
 figure {
@@ -73,9 +81,9 @@ figure {
 .authors > * {
   /*padding: 0px 1em;*/
   flex: 0 1 20ch;
-  flex-basis: 14ch;
+  flex-basis: 17ch;
   margin: 0em 0px 0.8em 0px;
-  max-width: 14ch;
+  max-width: 17ch;
 }
 
 .authors .author-name {
