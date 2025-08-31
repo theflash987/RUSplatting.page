@@ -6,7 +6,7 @@
   <link rel="icon" href="data:;base64,iVBORw0KGgo=">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="/style.css" />
+  <link rel="stylesheet" href="./style.css" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>RUSplatting: Robust 3D Gaussian Splatting for Sparse-View Underwater Scene Reconstruction</title>
   <meta name="description"
@@ -51,7 +51,8 @@
   <div class="links">
     <a class="button" href="./paper.pdf"><i class="ti ti-file-type-pdf"></i> Paper</a>
     <a class="button" href="https://arxiv.org/abs/2505.15737"><img
-        style="height:80%;margin-right:0.2em;filter: brightness(0) saturate(100%) invert(100%)" src="/assets/arxiv.svg">
+        style="height:80%;margin-right:0.2em;filter: brightness(0) saturate(100%) invert(100%)"
+        src="./assets/arxiv.svg">
       arXiv</a>
     <a class="button" href="https://github.com/theflash987/RUSplatting"><i class="ti ti-brand-github-filled"></i>
       Code</a>
@@ -62,8 +63,8 @@
     }
   </style>
   <video class="video" style="aspect-ratio: 1920/1080" loop muted autoplay>
-    <source src="/assets/curasao.webm" type="video/webm">
-    <source src="/assets/curasao.mp4" type="video/mp4">
+    <source src="./assets/curasao.webm" type="video/webm">
+    <source src="./assets/curasao.mp4" type="video/mp4">
   </video>
   <p class="justify" style="font-size: 1rem;margin: 0 0 0.4rem 0; text-align-last: center">
     <strong>WaterSplatting</strong> combines 3DGS with volume rendering to enable water/fog modeling</strong>
@@ -72,21 +73,24 @@
   <section class="abstract">
     <h2>Abstract</h2>
     <p>
-      We introduce WaterSplatting, a novel approach that fuses volumetric rendering with 3DGS to handle underwater data
-      effectively.
-      Our method employs 3DGS for explicit geometry representation and a separate volumetric field (queried once per
-      pixel) for capturing the scattering medium.
-      This dual representation further allows the restoration of the scenes by removing the scattering medium.
-      Our method outperforms state-of-the-art NeRF-based methods in rendering quality on the underwater SeaThru-NeRF
-      dataset.
-      Furthermore, it does so while offering real-time rendering performance.
+      Reconstructing high-fidelity underwater scenes remains a challenging task due to light absorption,
+      scattering, and limited visibility inherent in aquatic environments. This paper presents an enhanced
+      Gaussian Splatting-based framework that improves both the visual quality and geometric accuracy of deep
+      underwater rendering. We propose decoupled learning for RGB channels, guided by the physics of underwater
+      attenuation, to enable more accurate colour restoration. To address sparse-view limitations and improve
+      view consistency, we introduce a frame interpolation strategy with a novel adaptive weighting scheme.
+      Additionally, we introduce a new loss function aimed at reducing noise while preserving edges, which is
+      essential for deep-sea content. We also release a newly collected dataset, Submerged3D, captured
+      specifically in deep-sea environments. Experimental results demonstrate that our framework consistently
+      outperforms state-of-the-art methods with PSNR gains up to 1.90dB, delivering superior perceptual quality
+      and robustness, and offering promising directions for marine robotics and underwater visual analytics.
     </p>
 
     <figure style="margin: 0">
       <picture>
-        <source srcset="/assets/overview.webp, /assets/overview@2x.webp 2x" type="image/webp" />
-        <source srcset="/assets/overview.png, /assets/overview@2x.png 2x" type="image/png" />
-        <img src="/assets/overview.png" alt="WaterSplatting overview"
+        <source srcset="./assets/overview.webp, /assets/overview@2x.webp 2x" type="image/webp" />
+        <source srcset="./assets/overview.png, /assets/overview@2x.png 2x" type="image/png" />
+        <img src="./assets/overview.png" alt="WaterSplatting overview"
           style="width: 100%; margin: 1em auto 0.3em auto; display: block;" />
       </picture>
       <figcaption style="text-align: justify">
@@ -104,8 +108,8 @@
     <figure>
       <div class="video-wrapper">
         <video class="video-compare" style="aspect-ratio: 1280/720" loop muted>
-          <source src="/assets/panama-seathru-ws.webm" type="video/webm">
-          <source src="/assets/panama-seathru-ws.mp4" type="video/mp4">
+          <source src="./assets/panama-seathru-ws.webm" type="video/webm">
+          <source src="./assets/panama-seathru-ws.mp4" type="video/mp4">
         </video>
         <span class="video-label video-label-with-fps">
           <span>SeaThru-NeRF<div class="video-fps">FPS: 0.38</div></span>
@@ -120,8 +124,8 @@
     <figure>
       <div class="video-wrapper">
         <video class="video-compare" style="aspect-ratio: 1280/720" loop muted>
-          <source src="/assets/japan-seathru-ws.webm" type="video/webm">
-          <source src="/assets/japan-seathru-ws.mp4" type="video/mp4">
+          <source src="./assets/japan-seathru-ws.webm" type="video/webm">
+          <source src="./assets/japan-seathru-ws.mp4" type="video/mp4">
         </video>
         <span class="video-label video-label-with-fps">
           <span>SeaThru-NeRF<div class="video-fps">FPS: 0.63</div></span>
@@ -136,8 +140,8 @@
     <figure>
       <div class="video-wrapper">
         <video class="video-compare" style="aspect-ratio: 1280/720" loop muted>
-          <source src="/assets/iui3-obj.webm" type="video/webm">
-          <source src="/assets/iui3-obj.mp4" type="video/mp4">
+          <source src="./assets/iui3-obj.webm" type="video/webm">
+          <source src="./assets/iui3-obj.mp4" type="video/mp4">
         </video>
         <span class="video-label">
           <span>WaterSplatting</span>
@@ -152,8 +156,8 @@
     <figure>
       <div class="video-wrapper">
         <video class="video-compare" style="aspect-ratio: 1280/720" loop muted>
-          <source src="/assets/curasao-obj.webm" type="video/webm">
-          <source src="/assets/curasao-obj.mp4" type="video/mp4">
+          <source src="./assets/curasao-obj.webm" type="video/webm">
+          <source src="./assets/curasao-obj.mp4" type="video/mp4">
         </video>
         <span class="video-label">
           <span>WaterSplatting</span>
@@ -168,27 +172,20 @@
   <section>
     <h2>Acknowledgements</h2>
     <p class="justify">
-      This work was supported by the Czech Science Foundation (GAČR) EXPRO (grant no. 23-07973X), and by the Ministry of
-      Education, Youth and Sports of the Czech Republic through the e-INFRA CZ (ID:90254).
-      Jonas Kulhanek acknowledges travel support from the European Union’s Horizon 2020 research and innovation
-      programme under ELISE (grant no. 951847).
-      The renderer is built on <a href="https://github.com/nerfstudio-project/nerfstudio/">Splatfacto</a> and <a
-        href="https://github.com/AkerBP/seathru_nerf">SeaThru-NeRF (nerfstudio reimplementation)</a>.
-      We thank all the authors for their great work and repos. Finally, we would also like to thank
-      Dor Verbin for the video comparison tool used in this website.
+      This work was supported by the UKRI MyWorld Strength in Places Programme(SIPF00006/1) and EPSRC ECR(EP/Y002490/1).
     </p>
   </section>
   <section class="citation">
     <h2>Citation</h2>
-    <span>Please use the following citation:</span>
-    <pre><code>@article{li2024watersplatting,
-  title={{W}ater{S}platting: Fast Underwater {3D} Scene Reconstruction using Gaussian Splatting},
-  author={Li, Huapeng and Song, Wenxuan and Xu, Tianao and Elsig, Alexandre and Kulhanek, Jonas},
-  journal={3DV},
-  year={2025}
+    <span>If you think this project is helpful, please feel free to leave a star or cite our paper:</span>
+    <pre><code>@inproceedings{jiang2025rusplatting,
+  author    = {Zhuodong Jiang and Haoran Wang and Guoxi Huang and Brett Seymour and Nantheera Anantrasirichai},
+  title     = {RUSplatting: Robust 3D Gaussian Splatting for Sparse-View Underwater Scene Reconstruction},
+  booktitle = {Proceedings of the British Machine Vision Conference (BMVC)},
+  year      = {2025}
 }</code></pre>
   </section>
-  <script src="/scripts.js"></script>
+  <script src="./scripts.js"></script>
 </body>
 
 </html>
