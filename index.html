@@ -87,19 +87,14 @@
     </p>
 
     <figure style="margin: 0">
-      <picture>
-        <source srcset="./assets/overview.webp, /assets/overview@2x.webp 2x" type="image/webp" />
-        <source srcset="./assets/overview.png, /assets/overview@2x.png 2x" type="image/png" />
-        <img src="./assets/overview.png" alt="WaterSplatting overview"
-          style="width: 100%; margin: 1em auto 0.3em auto; display: block;" />
-      </picture>
+      <img src="./assets/overview.svg" alt="RUSplatting overview" width="1600" height="900"
+        style="width: 100%; margin: 1em auto 0.3em; display: block;" />
       <figcaption style="text-align: justify">
-        We start rendering by casting a ray per pixel and collect the patch-intersected Gaussians along the ray
-        and their color given ray direction. Then, we walk through the list of sorted Gaussians per pixel, query their
-        opacity and depth, based on
-        which we acquire the transmittance of both Gaussians and medium, rendering the Gaussians and the segments
-        between adjacent two to
-        obtain the Medium component and the Object component.
+        Pipeline of RUSplatting. Yellow highlights indicate the proposed contributions:
+        (1) colour-channel decoupling with a deeper MLP for improved estimation of underwater medium parameters;
+        (2) IFI to enrich representations and enhance frame overlap;
+        (3) an AFW strategy to suppress contributions from poorly interpolated frames;
+        and (4) an ESL to reduce noise while preserving fine structural details.
       </figcaption>
     </figure>
   </section>
@@ -108,65 +103,34 @@
     <figure>
       <div class="video-wrapper">
         <video class="video-compare" style="aspect-ratio: 1280/720" loop muted>
-          <source src="./assets/panama-seathru-ws.webm" type="video/webm">
-          <source src="./assets/panama-seathru-ws.mp4" type="video/mp4">
+          <source src="./assets/isro_uw_rus.webm" type="video/webm">
+          <source src="./assets/isro_uw_rus.mp4" type="video/mp4">
         </video>
         <span class="video-label video-label-with-fps">
-          <span>SeaThru-NeRF<div class="video-fps">FPS: 0.38</div></span>
-          <span>WaterSplatting<div class="video-fps">FPS: 27.4</div></span>
+          <span>UW-GS</span>
+          <span>RUSplatting</span>
         </span>
       </div>
       <figcaption>
-        <strong>Panama - comparison with SeaThru-NeRF</strong> <strong>Left:</strong>SeaThru-NeRF<strong>
-          Right:</strong> WaterSplatting.
+        <strong>Isro - comparison with UW-GS</strong> <strong>Left:</strong>UW-GS<strong>
+          Right:</strong> RUSplatting
       </figcaption>
     </figure>
     <figure>
       <div class="video-wrapper">
         <video class="video-compare" style="aspect-ratio: 1280/720" loop muted>
-          <source src="./assets/japan-seathru-ws.webm" type="video/webm">
-          <source src="./assets/japan-seathru-ws.mp4" type="video/mp4">
-        </video>
-        <span class="video-label video-label-with-fps">
-          <span>SeaThru-NeRF<div class="video-fps">FPS: 0.63</div></span>
-          <span>WaterSplatting<div class="video-fps">FPS: 59.4</div></span>
-        </span>
-      </div>
-      <figcaption>
-        <strong>Japanese Gradens - comparison with SeaThru-NeRF</strong> <strong>Left:</strong>SeaThru-NeRF<strong>
-          Right:</strong> WaterSplatting.
-      </figcaption>
-    </figure>
-    <figure>
-      <div class="video-wrapper">
-        <video class="video-compare" style="aspect-ratio: 1280/720" loop muted>
-          <source src="./assets/iui3-obj.webm" type="video/webm">
-          <source src="./assets/iui3-obj.mp4" type="video/mp4">
+          <source src="./assets/pana_uw_rus.webm" type="video/webm">
+          <source src="./assets/pana_uw_rus.mp4" type="video/mp4">
         </video>
         <span class="video-label">
-          <span>WaterSplatting</span>
-          <span>removed medium</span>
+          <span>UW-GS</span>
+          <span>RUSplatting</span>
         </span>
       </div>
       <figcaption>
-        <strong>IUI3 - w/o medium.</strong> <strong>Left:</strong>WaterSplatting reconstruction. <strong>Right:</strong>
-        WaterSplatting with medium removed.
+        <strong>Panama - comparison with UW-GS</strong> <strong>Left:</strong>UW-GS<strong>Right:</strong>
+        RUSplatting
       </figcaption>
-    </figure>
-    <figure>
-      <div class="video-wrapper">
-        <video class="video-compare" style="aspect-ratio: 1280/720" loop muted>
-          <source src="./assets/curasao-obj.webm" type="video/webm">
-          <source src="./assets/curasao-obj.mp4" type="video/mp4">
-        </video>
-        <span class="video-label">
-          <span>WaterSplatting</span>
-          <span>removed medium</span>
-        </span>
-        <strong>Curasao - w/o medium.</strong> <strong>Left:</strong>WaterSplatting reconstruction.
-        <strong>Right:</strong> WaterSplatting with medium removed.
-        </span>
-      </div>
     </figure>
   </section>
   <section>
