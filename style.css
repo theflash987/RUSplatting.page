@@ -30,7 +30,7 @@ h2 {
   margin-bottom: 0.3em;
 }
 
-h1 .title-main  {
+h1 .title-main {
   font-weight: 700;
   text-align: center;
   display: flex;
@@ -39,16 +39,17 @@ h1 .title-main  {
   /*margin-bottom: 0.2em;*/
 }
 
-h1 .title-main > img {
+h1 .title-main>img {
   display: block;
   height: 1.3em;
 }
-h1 .title-main > span {
+
+h1 .title-main>span {
   display: block;
   line-height: 1.3em;
 }
 
-h1 .title-small  {
+h1 .title-small {
   font-size: 0.8em;
   display: block;
   text-align: center;
@@ -78,7 +79,7 @@ figure {
   gap: 0.8em;
 }
 
-.authors > * {
+.authors>* {
   /*padding: 0px 1em;*/
   flex: 0 1 20ch;
   flex-basis: 17ch;
@@ -123,6 +124,7 @@ figure {
 .button .ti {
   margin-right: 0.3em;
 }
+
 .button {
   border-radius: 290486px;
   padding-left: calc(1em + .25em);
@@ -155,9 +157,11 @@ figure {
   vertical-align: top;
   transition: background-color 0.2s ease-in-out;
 }
+
 a.button {
   text-decoration: none;
 }
+
 .button:hover {
   /* background-color: #1772d0; */
   /* use gray color for hover */
@@ -165,10 +169,12 @@ a.button {
 }
 
 
-.video, .video-wrapper {
+.video,
+.video-wrapper {
   position: relative;
   width: 100%;
 }
+
 .video-wrapper .video-label {
   width: 100%;
   position: absolute;
@@ -176,7 +182,8 @@ a.button {
   display: flex;
   justify-content: space-between;
 }
-.video-wrapper .video-label > * {
+
+.video-wrapper .video-label>* {
   size: 1.5em;
   background-color: rgba(0, 0, 0, 0.4);
   font-weight: 700;
@@ -184,11 +191,12 @@ a.button {
   padding: 0.5em;
   color: white;
 }
-.video-wrapper .video-label-with-fps > * {
+
+.video-wrapper .video-label-with-fps>* {
   height: 3.5em;
 }
 
-.video-wrapper .video-label > *:last-child {
+.video-wrapper .video-label>*:last-child {
   text-align: right;
 }
 
@@ -212,6 +220,7 @@ video.video-compare {
   opacity: 0;
   width: 100%;
 }
+
 canvas.video-compare {
   width: 100%;
   cursor: col-resize;
@@ -300,7 +309,7 @@ section {
 }
 
 .slider-image {
-  width:20%;
+  width: 20%;
   position: relative;
   --active-weight: 0%;
   --current-color: color-mix(in srgb, rgb(59 130 246) var(--active-weight), #d3d3d3);
@@ -319,7 +328,7 @@ section {
   transform: translateX(-50%);
 }
 
-.slider-image > img {
+.slider-image>img {
   width: 100%;
   padding: 4px;
   border: 2px solid var(--current-color);
@@ -330,7 +339,8 @@ section {
     margin: 0px auto;
     max-width: 70ch;
   }
-  .authors > * {
+
+  .authors>* {
     flex-basis: 18ch;
     max-width: 22ch;
   }
@@ -355,7 +365,7 @@ section {
     font-size: 14px;
   }
 
-  .authors > * {
+  .authors>* {
     flex: 1 1 0px;
     flex-basis: 17ch;
   }
@@ -365,8 +375,45 @@ section {
   html {
     padding: 0px 20px;
   }
+
   body {
     font-size: 12px;
   }
 }
-  
+
+.authors-block {
+  text-align: center;
+  margin: 10px auto 22px;
+}
+
+.authors-line {
+  font-size: clamp(1rem, 2.2vw, 1.25rem);
+  line-height: 1.4;
+}
+
+.authors-line .author {
+  display: inline;
+  margin: 0 .25em;
+  white-space: nowrap;
+}
+
+.authors-line sup {
+  font-size: .65em;
+  vertical-align: super;
+  margin-left: .15em;
+}
+
+.affils-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 6px 24px;
+  max-width: 920px;
+  margin: 8px auto 0;
+  font-size: .9rem;
+  color: #555;
+}
+
+.affils-list sup {
+  font-size: .8em;
+  margin-right: .25em;
+}
