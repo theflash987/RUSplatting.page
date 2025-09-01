@@ -417,3 +417,17 @@ section {
   font-size: .8em;
   margin-right: .25em;
 }
+
+.compare-title {
+  text-align: center;
+  font-weight: 400;
+  margin: .2rem 0 .6rem;
+}
+
+.teaser-title {
+  text-align: center;
+  font-weight: 400;
+  font-size: clamp(20px, 3.0vw, 32px);
+  letter-spacing: .02em;
+  margin: .2rem 0 .8rem;
+}
