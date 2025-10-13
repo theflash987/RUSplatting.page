@@ -142,7 +142,8 @@ function ondocumentready() {
     if (element.readyState > 3) {
       loadeddata();
     } else {
-      element.addEventListener("loadeddata", loadeddata);
+      element.addEventListener("loadeddata", loadeddata, { once: true });
+      element.addEventListener("canplay", loadeddata, { once: true });
     }
   });
 
