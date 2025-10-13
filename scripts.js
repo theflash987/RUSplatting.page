@@ -117,13 +117,16 @@ function playMergeVid(vid, videoMerge) {
 // After the document loads, play the videos
 function ondocumentready() {
   [...document.querySelectorAll('video.video-compare')].forEach(element => {
+    if (element.dataset.processed === '1') return; 
+    element.dataset.processed = '1';
     // Add listener to onplay
     setTimeout(() => { if (!element.nextSibling) element.style.opacity = "1"; }, 2000);
     function loadeddata () {
       const canvas = document.createElement("canvas");
       element.parentNode.insertBefore(canvas, element.nextSibling);
-      element.height = 0;
-      element.style.position = "absolute";
+      // element.height = 0;
+      // element.style.position = "absolute";
+      element.style.display = 'none';
       canvas.style.aspectRatio = `${element.videoWidth/2}/${element.videoHeight}`;
       canvas.width = element.videoWidth/2;
       canvas.height = element.videoHeight;
