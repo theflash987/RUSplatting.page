@@ -128,6 +128,14 @@ function ondocumentready() {
       canvas.width = element.videoWidth/2;
       canvas.height = element.videoHeight;
       canvas.classList.add("video-compare");
+      element.muted = true;
+      element.setAttribute('muted', '');      
+      element.setAttribute('playsinline', ''); 
+      element.play().catch(() => {
+        element.style.opacity = '1';
+        element.style.position = 'static';
+        element.removeAttribute('height');
+      });
       element.play();
       playMergeVid(element, canvas);
     }
