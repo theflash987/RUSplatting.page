@@ -118,6 +118,7 @@ function playMergeVid(vid, videoMerge) {
 function ondocumentready() {
   [...document.querySelectorAll('video.video-compare')].forEach(element => {
     // Add listener to onplay
+    setTimeout(() => { if (!element.nextSibling) element.style.opacity = "1"; }, 2000);
     function loadeddata () {
       const canvas = document.createElement("canvas");
       element.parentNode.insertBefore(canvas, element.nextSibling);
@@ -134,6 +135,7 @@ function ondocumentready() {
       loadeddata();
     } else {
       element.addEventListener("loadeddata", loadeddata);
+      element.addEventListener("canplay", loadeddata);
     }
   });
 
