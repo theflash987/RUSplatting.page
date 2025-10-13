@@ -143,7 +143,6 @@ function ondocumentready() {
       loadeddata();
     } else {
       element.addEventListener("loadeddata", loadeddata);
-      element.addEventListener("canplay", loadeddata);
     }
   });
 
